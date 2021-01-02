@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:title="@string/app_name"
+        android:titleTextColor="#000"
+        tools:targetApi="lollipop"
+        android:elevation="4dp"
+        android:background="#fff"
+        android:layout_marginBottom="8dp"/>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:layout_margin="4dp"
+            android:background="#fff"
+            android:outlineProvider="bounds"
+            android:elevation="2dp"
+            >
+
+            <ImageView
+                android:id="@+id/flag"
+                android:layout_width="60dp"
+                android:layout_height="36dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lineSeparator"
+                app:layout_constraintRight_toLeftOf="@id/name"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:src="@drawable/images"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="Hello"
+                android:textAllCaps="true"
+                android:textSize="30sp"
+                android:textColor="@android:color/black"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/flag"
+                app:layout_constraintLeft_toRightOf="@id/flag"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/lineSeparator"
+                android:padding="5dp"
+                android:text="United Sates"
+                android:fontFamily="@font/timesbd"
+                app:layout_constrainedWidth="true"
+                android:textColor="#555"
+                android:textSize="20sp"/>
+
+            <View
+                android:id="@+id/lineSeparator"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                app:layout_constraintLeft_toLeftOf="@id/flag"
+                app:layout_constraintRight_toRightOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintBottom_toTopOf="@id/layout"
+                android:background="#ccc"
+                android:layout_marginBottom="10dp"/>
+            <LinearLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/lineSeparator"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

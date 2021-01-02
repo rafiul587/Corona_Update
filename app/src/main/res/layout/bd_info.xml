@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="bdExpandOrCollaps"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:animateLayoutChanges="true"
+    android:background="#fff"
+    android:elevation="1dp"
+    android:outlineProvider="bounds"
+    android:padding="6dp"
+    app:layout_constraintEnd_toEndOf="@id/guidelineLeft3"
+    app:layout_constraintHeight_default="spread"
+    app:layout_constraintStart_toStartOf="@id/guidelineLeft1"
+    app:layout_constraintTop_toBottomOf="@id/worldInfo">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FF8EA0A3"
+        app:layout_constraintBottom_toTopOf="@id/newCases"
+        app:layout_constraintEnd_toEndOf="@id/newDeath"
+        app:layout_constraintStart_toStartOf="@id/newCases"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/refresh"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="@id/newDeath"
+        app:layout_constraintTop_toTopOf="@id/bd"
+        tools:text="Update" />
+
+    <TextView
+        android:id="@+id/bd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="Bangladesh Info"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/newCases"
+        app:layout_constraintEnd_toEndOf="@id/newCases"
+        app:layout_constraintStart_toStartOf="@id/newCases"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/refresh"
+        app:layout_constraintBottom_toTopOf="@id/newDeath"
+        app:layout_constraintEnd_toEndOf="@id/newDeath"
+        app:layout_constraintStart_toEndOf="@+id/update"
+        app:layout_constraintTop_toTopOf="@id/bd" />
+
+    <LinearLayout
+        android:id="@+id/newCases"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/totalCases"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/newDeath"
+        app:layout_constraintTop_toBottomOf="@id/bd"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:padding="4dp"
+            android:text=" New Cases" />
+
+        <TextView
+            android:id="@+id/newCaseStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522805" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newDeath"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/totalDeath"
+        app:layout_constraintLeft_toRightOf="@id/newCases"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bd"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:padding="4dp"
+            android:text="New Deaths" />
+
+        <TextView
+            android:id="@+id/newDeathStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="385800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalCases"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/totalRecover"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/totalDeath"
+        app:layout_constraintTop_toBottomOf="@id/newCases"
+        app:layout_constraintWidth_percent=".48"
+        app:layout_goneMarginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="Total Cases" />
+
+        <TextView
+            android:id="@+id/totalCasesStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_goneMarginBottom="4dp"
+            tools:text="23523" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalDeath"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/bdCritical"
+        app:layout_constraintLeft_toRightOf="@id/totalCases"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newDeath"
+        app:layout_constraintWidth_percent=".48"
+        app:layout_goneMarginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="Total Deaths" />
+
+        <TextView
+            android:id="@+id/totalDeathStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textColor="@android:color/holo_red_light"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_goneMarginBottom="4dp"
+            tools:text="385800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalRecover"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/activeCases"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/bdCritical"
+        app:layout_constraintTop_toBottomOf="@id/totalCases"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text=" Total Recovered" />
+
+        <TextView
+            android:id="@+id/totalRecoverStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="23523" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bdCritical"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/totalTest"
+        app:layout_constraintLeft_toRightOf="@id/totalRecover"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/totalDeath"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="Serious/Critical" />
+
+        <TextView
+            android:id="@+id/totalCriticalStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="23523" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activeCases"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bdMore"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/totalTest"
+        app:layout_constraintTop_toBottomOf="@id/totalRecover"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="Active Cases" />
+
+        <TextView
+            android:id="@+id/activeCasesStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="23523" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/totalTest"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/bdMore"
+        app:layout_constraintLeft_toRightOf="@id/activeCases"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bdCritical"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="Total Tests" />
+
+        <TextView
+            android:id="@+id/totalTestStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:padding="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="23523" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bdMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:src="@drawable/expand"
+        app:layout_constraintLeft_toLeftOf="@id/totalCases"
+        app:layout_constraintRight_toRightOf="@id/totalDeath"
+        app:layout_constraintTop_toBottomOf="@id/activeCases" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

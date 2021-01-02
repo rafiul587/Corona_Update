@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:onClick="expandOrCollaps"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:animateLayoutChanges="true"
+    android:background="#fff"
+    android:elevation="2dp"
+    android:outlineProvider="bounds"
+    android:padding="6dp"
+    app:layout_constraintBottom_toTopOf="@+id/bdInfo"
+    app:layout_constraintEnd_toEndOf="@id/guidelineLeft3"
+    app:layout_constraintStart_toStartOf="@id/guidelineLeft1">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FF8EA0A3"
+        app:layout_constraintBottom_toTopOf="@id/cases"
+        app:layout_constraintEnd_toEndOf="@id/death"
+        app:layout_constraintStart_toStartOf="@id/cases"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/refresh"
+        app:layout_constraintStart_toStartOf="@id/death"
+        app:layout_constraintTop_toTopOf="@id/world"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        tools:text="Update" />
+
+    <TextView
+        android:id="@+id/world"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="World Info"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/cases"
+        app:layout_constraintEnd_toEndOf="@id/cases"
+        app:layout_constraintStart_toStartOf="@id/cases"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/refresh"
+        app:layout_constraintBottom_toTopOf="@id/death"
+        app:layout_constraintEnd_toEndOf="@id/death"
+        app:layout_constraintStart_toEndOf="@id/update"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/cases"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/recovered"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/death"
+        app:layout_constraintTop_toBottomOf="@id/world"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:padding="4dp"
+            android:text="@string/total_cases" />
+
+        <TextView
+            android:id="@+id/caseStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522805" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/death"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/critical"
+        app:layout_constraintLeft_toRightOf="@id/cases"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/world"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:padding="4dp"
+            android:text="@string/total_death" />
+
+        <TextView
+            android:id="@+id/deathStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="3,85,800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recovered"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/newCase"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/critical"
+        app:layout_constraintTop_toBottomOf="@id/cases"
+        app:layout_constraintWidth_percent=".48"
+        app:layout_goneMarginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="@string/total_recovered" />
+
+        <TextView
+            android:id="@+id/recoveredStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/critical"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        app:layout_constraintBottom_toTopOf="@id/newDeath"
+        app:layout_constraintLeft_toRightOf="@id/recovered"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/death"
+        app:layout_constraintWidth_percent=".48"
+        app:layout_goneMarginBottom="4dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="@string/serious_critical" />
+
+        <TextView
+            android:id="@+id/criticalStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="385800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newCase"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/activeCases"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/newDeath"
+        app:layout_constraintTop_toBottomOf="@id/recovered"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="@string/new_cases" />
+
+        <TextView
+            android:id="@+id/newCaseStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/newDeath"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/affectedCountry"
+        app:layout_constraintLeft_toRightOf="@id/newCase"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/critical"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="New Deaths" />
+
+        <TextView
+            android:id="@+id/newDeathStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="385800" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/activeCases"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/seeMore"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/affectedCountry"
+        app:layout_constraintTop_toBottomOf="@id/newCase"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="@string/active_cases" />
+
+        <TextView
+            android:id="@+id/activeStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522805" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/affectedCountry"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="4dp"
+        android:background="#fff"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/seeMore"
+        app:layout_constraintLeft_toRightOf="@id/activeCases"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/newDeath"
+        app:layout_constraintWidth_percent=".48">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:text="@string/affected_country" />
+
+        <TextView
+            android:id="@+id/affectedCountryStat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="4522805" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/seeMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:src="@drawable/expand"
+        app:layout_constraintLeft_toLeftOf="@id/recovered"
+        app:layout_constraintRight_toRightOf="@id/critical"
+        app:layout_constraintTop_toBottomOf="@id/activeCases" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:outlineProvider="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
